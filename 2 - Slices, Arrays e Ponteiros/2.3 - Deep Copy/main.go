@@ -33,9 +33,9 @@ func main() {
 
 func deepCopy(matriz [][]int) [][]int {
 	result := make([][]int, len(matriz))
-	for i := range matriz {
-		result[i] = make([]int, len(matriz[i]))
-		copy(result[i], matriz[i])
+	for i, slice := range matriz {
+		result[i] = make([]int, len(slice))
+		copy(result[i], slice)
 	}
 	return result
 }
